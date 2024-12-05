@@ -28,10 +28,11 @@ export default class Agent {
      * @returns true if load was successful
      */
     async import(_url, _functions) {
-        if (!_url.startsWith("http"))
-            _url = document.location.href + "/../" + _url;
+        let url = _url;
+        if (!url.startsWith("http"))
+            url = document.location.href + "/../" + url;
         try {
-            let module = await import(_url);
+            let module = await import(url);
             let namespace = Reflect.ownKeys(module)[0];
             for (const f of _functions)
                 this[f] = Reflect.get(module, namespace)[f];
