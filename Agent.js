@@ -28,6 +28,7 @@ export default class Agent {
      * @returns true if load was successful
      */
     async import(_url, _functions) {
+        console.log(document.location.pathname);
         try {
             let module = await import(_url);
             let namespace = Reflect.ownKeys(module)[0];
