@@ -33,7 +33,8 @@ export default class Agent {
    * @returns true if load was successful
    */
   public async import(_url: string, _functions: string[]): Promise<boolean> {
-    console.log(document.location.pathname)
+    if (!_url.startsWith("http"))
+      _url = document.location.href + "/../" + _url;
     try {
       let module = await import(_url)
       let namespace = Reflect.ownKeys(module)[0]
