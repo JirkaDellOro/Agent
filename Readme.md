@@ -8,5 +8,5 @@ After after closing the dialog, call e.g. the function `foo` of agent 1 with the
 Agent.get(1).foo(...)
 ``` 
 
-It is also possible, to create a single agente using `new Agent()` and the load the desired functions by calling import(<url>, <functions>) on this agent
+It is also possible, to create a single agent using `new Agent()` and the load the desired functions by calling import(<url>, <functions>) on this agent
 
